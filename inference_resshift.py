@@ -88,9 +88,9 @@ def get_configs(args):
             raise ValueError(f"Unexpected version type: {args.version}")
         assert args.scale == 4, 'We only support the 4x super-resolution now!'
         ckpt_url = _LINK[args.version]
-        ckpt_path = ckpt_dir / f'resshift_{args.task}x{args.scale}_s{_STEP[args.version]}_{args.version}.pth'
-        print(ckpt_path)
-        # ckpt_path = Path('logs/0/2024-07-23-09-37/ckpts/model_10000.pth')
+        # ckpt_path = ckpt_dir / f'resshift_{args.task}x{args.scale}_s{_STEP[args.version]}_{args.version}.pth'
+        # print(ckpt_path)
+        ckpt_path = ckpt_dir / f'model_10000.pth'
         vqgan_url = _LINK['vqgan']
         vqgan_path = ckpt_dir / f'autoencoder_vq_f4.pth'
     elif args.task == 'bicsr':
